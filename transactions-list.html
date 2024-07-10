@@ -61,8 +61,10 @@
                                     role="button" aria-haspopup="true" aria-expanded="false">مدیریت گزارش ها<span
                                         class="caret"></span></a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="file:///C:/Users/No1/Desktop/kntu/4022/net/prj/monthly-report.html"> گزارش ماهانه</a></li>
-                                    <li><a href="file:///C:/Users/No1/Desktop/kntu/4022/net/prj/yearly-report.html">  گزارش سالانه</a></li>
+                                    <li><a href="file:///C:/Users/No1/Desktop/kntu/4022/net/prj/monthly-report.html">
+                                            گزارش ماهانه</a></li>
+                                    <li><a href="file:///C:/Users/No1/Desktop/kntu/4022/net/prj/yearly-report.html">
+                                            گزارش سالانه</a></li>
                                 </ul>
                             </li>
                             <li class="dropdown">
@@ -70,8 +72,10 @@
                                     role="button" aria-haspopup="true" aria-expanded="false">مدیریت تراکنش ها<span
                                         class="caret"></span></a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="file:///C:/Users/No1/Desktop/kntu/4022/net/prj/add-transaction.html">ایجاد تراکنش</a></li>
-                                    <li><a href="file:///C:/Users/No1/Desktop/kntu/4022/net/prj/transactions-list.html">مشاهده لیست تراکنش ها</a></li>
+                                    <li><a href="file:///C:/Users/No1/Desktop/kntu/4022/net/prj/add-transaction.html">ایجاد
+                                            تراکنش</a></li>
+                                    <li><a href="file:///C:/Users/No1/Desktop/kntu/4022/net/prj/transactions-list.html">مشاهده
+                                            لیست تراکنش ها</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -100,19 +104,25 @@
                 <div id="sidebar-menu">
                     <ul>
                         <li class="has_sub">
-                            <a href="javascript:void(0);" class="waves-effect"><i class="glyphicon glyphicon-signal"></i><span>
+                            <a href="javascript:void(0);" class="waves-effect"><i
+                                    class="glyphicon glyphicon-signal"></i><span>
                                     نمودارها </span></a>
                             <ul class="list-unstyled">
-                                <li><a href="file:///C:/Users/No1/Desktop/kntu/4022/net/prj/linear-chart.html">نمودار واریز-برداشت</a></li>
-                                <li><a href="file:///C:/Users/No1/Desktop/kntu/4022/net/prj/circle-chart.html">نمودار هزینه ها</a></li>
+                                <li><a href="file:///C:/Users/No1/Desktop/kntu/4022/net/prj/linear-chart.html">نمودار
+                                        واریز-برداشت</a></li>
+                                <li><a href="file:///C:/Users/No1/Desktop/kntu/4022/net/prj/circle-chart.html">نمودار
+                                        هزینه ها</a></li>
                             </ul>
                         </li>
                         <li class="has_sub">
-                            <a href="javascript:void(0);" class="waves-effect"><i class="glyphicon glyphicon-folder-open"></i><span>
+                            <a href="javascript:void(0);" class="waves-effect"><i
+                                    class="glyphicon glyphicon-folder-open"></i><span>
                                     دسته بندی ها </span></a>
                             <ul class="list-unstyled">
-                                <li><a href="file:///C:/Users/No1/Desktop/kntu/4022/net/prj/categories-list.html">لیست دسته بندی ها</a></li>
-                                <li><a href="file:///C:/Users/No1/Desktop/kntu/4022/net/prj/add-category.html"> ایجاد دسته بندی جدید</a></li>
+                                <li><a href="file:///C:/Users/No1/Desktop/kntu/4022/net/prj/categories-list.html">لیست
+                                        دسته بندی ها</a></li>
+                                <li><a href="file:///C:/Users/No1/Desktop/kntu/4022/net/prj/add-category.html"> ایجاد
+                                        دسته بندی جدید</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -130,50 +140,85 @@
                     <h3 class="m-t-0 header-title"><b>لیست تراکنش ها</b></h3>
                     <p class="text-muted font-13">
                     </p>
-
+            
                     <div class="p-20">
-                        <table class="table table-striped m-0">
+                        <table class="table table-striped m-0" id="transactions-table">
                             <thead>
                                 <tr>
                                     <th>#</th>
                                     <th>عنوان تراکنش </th>
                                     <th>نوع تراکنش</th>
                                     <th>مبلغ</th>
+                                    <th>عملیات</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>خرید منزل</td>
-                                    <td>برداشت</td>
-                                    <td>20,0000</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">2</th>
-                                    <td>حقوق</td>
-                                    <td>واریز</td>
-                                    <td>8,000,000</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">3</th>
-                                    <td>قسط وام</td>
-                                    <td>برداشت</td>
-                                    <td>700,000</td>
-                                </tr>
+                                <!-- Transactions will be dynamically added here -->
                             </tbody>
                         </table>
                     </div>
-
                 </div>
             </div>
-        </div>
-    </div>
-
-
-    <script>
-        var resizefunc = [];
-    </script>
-
+            
+            <script>
+                async function fetchTransactions() {
+                    try {
+                        const response = await fetch('http://localhost:3001/pfm/list-transaction');
+                        if (response.ok) {
+                            const transactions = await response.json();
+                            const transactionsTable = document.getElementById('transactions-table');
+                            const tbody = transactionsTable.getElementsByTagName('tbody')[0];
+                            tbody.innerHTML = '';
+            
+                            transactions.forEach((transaction, index) => {
+                                const transactionTypeText = transaction.transactionType === 'DEPOSIT' ? 'واریز' : 'برداشت';                                const row = document.createElement('tr');
+                                row.innerHTML = `
+                                    <th scope="row">${index + 1}</th>
+                                    <td>${transaction.title}</td>
+                                    <td>${transactionTypeText}</td>
+                                    <td>${transaction.amount}</td>
+                                    <td>
+                                        <button class="btn btn-icon waves-effect waves-light btn-danger" onclick="deleteTransaction(${transaction.id})">
+                                            <i class="fa fa-remove"></i>
+                                        </button>
+                                        <button class="btn btn-icon waves-effect waves-light btn-info">
+                                            <a href="/edit-transaction?id=${transaction.id}" style="color: aliceblue;">
+                                                <i class="fa fa-edit"></i>
+                                            </a>
+                                        </button>
+                                    </td>
+                                `;
+                                tbody.appendChild(row);
+                            });
+                        } else {
+                            const error = await response.json();
+                            alert(`Error fetching transactions: ${error.error}`);
+                        }
+                    } catch (error) {
+                        alert(`Error: ${error.message}`);
+                    }
+                }
+            
+                async function deleteTransaction(transactionId) {
+                    try {
+                        const response = await fetch(`http://localhost:3001/pfm/delete-transaction/${transactionId}`, {
+                            method: 'DELETE'
+                        });
+            
+                        if (response.ok) {
+                            alert('تراکنش مورد نظر با موفقیت حذف شد!');
+                            fetchTransactions(); // Refresh the transactions table
+                        } else {
+                            const error = await response.json();
+                            alert(`Error deleting transaction: ${error.error}`);
+                        }
+                    } catch (error) {
+                        alert(`Error: ${error.message}`);
+                    }
+                }
+            
+                fetchTransactions();
+            </script>
     <!-- jQuery  -->
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/bootstrap-rtl.min.js"></script>
