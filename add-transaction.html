@@ -225,6 +225,7 @@
                     const transactionType = transactionTypeSelect.value;
                     const categoryId = categorySelect.value;
                     const cartId = 1;
+                    const transactionDate = new Date().toISOString(); 
 
                     try {
                         const response = await fetch('http://localhost:3001/pfm/create-transaction', {
