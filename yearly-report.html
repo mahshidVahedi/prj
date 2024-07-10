@@ -146,14 +146,14 @@
                                 <div class="form-group">
                                     <div class="col-sm-10">
                                         <select class="form-control" id="year-select">
-                                            <option>1403</option>
-                                            <option>1402</option>
-                                            <option>1401</option>
-                                            <option>1400</option>
+                                            <option value="2024">1403</option>
+                                            <option value="2023">1402</option>
+                                            <option value="2022">1401</option>
+                                            <option value="2021">1400</option>
                                         </select>
                                     </div>
                                 </div>
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <button type="submit" class="btn btn-success">مشاهده</button>
                             </form>
                         </div>
                     </div>
@@ -190,18 +190,19 @@
 
             function fetchTransactions(year) {
                 // Replace this with your API endpoint URL
-                const apiUrl = `https://your-api-endpoint.com/api/transactions?year=${year}`;
+                const apiUrl = `http://localhost:3001/pfm/yearly-transactions/${year}`;
 
                 fetch(apiUrl)
                     .then(response => response.json())
                     .then(data => {
                         transactionsTableBody.innerHTML = '';
                         data.forEach((transaction, index) => {
+                            const transactionTypeText = transaction.transactionType === 'DEPOSIT' ? 'واریز' : 'برداشت';
                             const row = document.createElement('tr');
                             row.innerHTML = `
                                 <th scope="row">${index + 1}</th>
                                 <td>${transaction.title}</td>
-                                <td>${transaction.type}</td>
+                                <td>${transactionTypeText}</td>
                                 <td>${transaction.amount}</td>
                             `;
                             transactionsTableBody.appendChild(row);

@@ -61,8 +61,10 @@
                                     role="button" aria-haspopup="true" aria-expanded="false">مدیریت گزارش ها<span
                                         class="caret"></span></a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="file:///C:/Users/No1/Desktop/kntu/4022/net/prj/monthly-report.html"> گزارش ماهانه</a></li>
-                                    <li><a href="file:///C:/Users/No1/Desktop/kntu/4022/net/prj/yearly-report.html">  گزارش سالانه</a></li>
+                                    <li><a href="file:///C:/Users/No1/Desktop/kntu/4022/net/prj/monthly-report.html">
+                                            گزارش ماهانه</a></li>
+                                    <li><a href="file:///C:/Users/No1/Desktop/kntu/4022/net/prj/yearly-report.html">
+                                            گزارش سالانه</a></li>
                                 </ul>
                             </li>
                             <li class="dropdown">
@@ -70,8 +72,10 @@
                                     role="button" aria-haspopup="true" aria-expanded="false">مدیریت تراکنش ها<span
                                         class="caret"></span></a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="file:///C:/Users/No1/Desktop/kntu/4022/net/prj/add-transaction.html">ایجاد تراکنش</a></li>
-                                    <li><a href="file:///C:/Users/No1/Desktop/kntu/4022/net/prj/transactions-list.html">مشاهده لیست تراکنش ها</a></li>
+                                    <li><a href="file:///C:/Users/No1/Desktop/kntu/4022/net/prj/add-transaction.html">ایجاد
+                                            تراکنش</a></li>
+                                    <li><a href="file:///C:/Users/No1/Desktop/kntu/4022/net/prj/transactions-list.html">مشاهده
+                                            لیست تراکنش ها</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -100,19 +104,25 @@
                 <div id="sidebar-menu">
                     <ul>
                         <li class="has_sub">
-                            <a href="javascript:void(0);" class="waves-effect"><i class="glyphicon glyphicon-signal"></i><span>
+                            <a href="javascript:void(0);" class="waves-effect"><i
+                                    class="glyphicon glyphicon-signal"></i><span>
                                     نمودارها </span></a>
                             <ul class="list-unstyled">
-                                <li><a href="file:///C:/Users/No1/Desktop/kntu/4022/net/prj/linear-chart.html">نمودار واریز-برداشت</a></li>
-                                <li><a href="file:///C:/Users/No1/Desktop/kntu/4022/net/prj/circle-chart.html">نمودار هزینه ها</a></li>
+                                <li><a href="file:///C:/Users/No1/Desktop/kntu/4022/net/prj/linear-chart.html">نمودار
+                                        واریز-برداشت</a></li>
+                                <li><a href="file:///C:/Users/No1/Desktop/kntu/4022/net/prj/circle-chart.html">نمودار
+                                        هزینه ها</a></li>
                             </ul>
                         </li>
                         <li class="has_sub">
-                            <a href="javascript:void(0);" class="waves-effect"><i class="glyphicon glyphicon-folder-open"></i><span>
+                            <a href="javascript:void(0);" class="waves-effect"><i
+                                    class="glyphicon glyphicon-folder-open"></i><span>
                                     دسته بندی ها </span></a>
                             <ul class="list-unstyled">
-                                <li><a href="file:///C:/Users/No1/Desktop/kntu/4022/net/prj/categories-list.html">لیست دسته بندی ها</a></li>
-                                <li><a href="file:///C:/Users/No1/Desktop/kntu/4022/net/prj/add-category.html"> ایجاد دسته بندی جدید</a></li>
+                                <li><a href="file:///C:/Users/No1/Desktop/kntu/4022/net/prj/categories-list.html">لیست
+                                        دسته بندی ها</a></li>
+                                <li><a href="file:///C:/Users/No1/Desktop/kntu/4022/net/prj/add-category.html"> ایجاد
+                                        دسته بندی جدید</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -124,7 +134,6 @@
         </div>
         <!-- Left Sidebar End -->
         <div class="content-page">
-            <!-- Start content -->
             <div class="content">
                 <div class="container " style="max-width: 800px;">
                     <div class="panel panel-default panel-border">
@@ -133,63 +142,31 @@
                             </h3>
                         </div>
                         <div class="panel-body">
-                            <div class="row">
-                                <div class="radio radio-info radio-inline">
-                                    <input type="radio" id="inlineRadio1" value="option1" name="radioInline" checked>
-                                    <label for="inlineRadio1"> فروردین </label>
+                            <form id="month-form">
+                                <div class="form-group">
+                                    <div class="col-sm-10">
+                                        <select class="form-control" id="month-select">
+                                            <option value="04">فروردین</option>
+                                            <option value="05">اردیبهشت</option>
+                                            <option value="06">خرداد</option>
+                                            <option value="07">تیر</option>
+                                            <option value="08">مرداد</option>
+                                            <option value="09">شهریور</option>
+                                            <option value="10">مهر</option>
+                                            <option value="11">آبان</option>
+                                            <option value="12">آذر</option>
+                                            <option value="01">دی</option>
+                                            <option value="02">بهمن</option>
+                                            <option value="03">اسفند</option>
+                                        </select>
+                                    </div>
                                 </div>
-                                <div class="radio radio-info radio-inline">
-                                    <input type="radio" id="inlineRadio1" value="option1" name="radioInline" checked>
-                                    <label for="inlineRadio1"> اردیبهشت </label>
-                                </div>
-                                <div class="radio radio-info radio-inline">
-                                    <input type="radio" id="inlineRadio1" value="option1" name="radioInline" checked>
-                                    <label for="inlineRadio1"> خرداد </label>
-                                </div>
-                                <div class="radio radio-info radio-inline">
-                                    <input type="radio" id="inlineRadio1" value="option1" name="radioInline" checked>
-                                    <label for="inlineRadio1"> تیر </label>
-                                </div>
-                                <div class="radio radio-info radio-inline">
-                                    <input type="radio" id="inlineRadio1" value="option1" name="radioInline" checked>
-                                    <label for="inlineRadio1"> مرداد </label>
-                                </div>
-                                <div class="radio radio-info radio-inline">
-                                    <input type="radio" id="inlineRadio1" value="option1" name="radioInline" checked>
-                                    <label for="inlineRadio1"> شهریور </label>
-                                </div>
-                            </div>
-                            <br>
-                            <div class="row">
-                                <div class="radio radio-info radio-inline">
-                                    <input type="radio" id="inlineRadio1" value="option1" name="radioInline" checked>
-                                    <label for="inlineRadio1"> مهر </label>
-                                </div>
-                                <div class="radio radio-info radio-inline">
-                                    <input type="radio" id="inlineRadio1" value="option1" name="radioInline" checked>
-                                    <label for="inlineRadio1"> آبان </label>
-                                </div>
-                                <div class="radio radio-info radio-inline">
-                                    <input type="radio" id="inlineRadio1" value="option1" name="radioInline" checked>
-                                    <label for="inlineRadio1"> آذر </label>
-                                </div>
-                                <div class="radio radio-info radio-inline">
-                                    <input type="radio" id="inlineRadio1" value="option1" name="radioInline" checked>
-                                    <label for="inlineRadio1"> دی </label>
-                                </div>
-                                <div class="radio radio-info radio-inline">
-                                    <input type="radio" id="inlineRadio1" value="option1" name="radioInline" checked>
-                                    <label for="inlineRadio1"> بهمن </label>
-                                </div>
-                                <div class="radio radio-info radio-inline">
-                                    <input type="radio" id="inlineRadio1" value="option1" name="radioInline" checked>
-                                    <label for="inlineRadio1"> اسفند </label>
-                                </div>
-                            </div>
+                                <button type="submit" class="btn btn-success">مشاهده</button>
+                            </form>
                         </div>
                     </div>
                     <div class="p-20">
-                        <table class="table table-striped m-0">
+                        <table class="table table-striped m-0" id="transactions-table">
                             <thead>
                                 <tr>
                                     <th>#</th>
@@ -199,67 +176,81 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>خرید منزل</td>
-                                    <td>برداشت</td>
-                                    <td>20,0000</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">2</th>
-                                    <td>حقوق</td>
-                                    <td>واریز</td>
-                                    <td>8,000,000</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">3</th>
-                                    <td>قسط وام</td>
-                                    <td>برداشت</td>
-                                    <td>700,000</td>
-                                </tr>
+                                <!-- Transactions will be dynamically added here -->
                             </tbody>
                         </table>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-    </div>
+            
+            <script>
+                const monthForm = document.getElementById('month-form');
+                const monthSelect = document.getElementById('month-select');
+                const transactionsTable = document.getElementById('transactions-table');
+                const tbody = transactionsTable.getElementsByTagName('tbody')[0];
+            
+                function fetchTransactionsByMonth(month) {
+                    fetch(`http://localhost:3001/pfm/monthly-transactions/${month}`)
+                        .then(response => response.json())
+                        .then(transactions => {
+                            tbody.innerHTML = '';
+                            transactions.forEach((transaction, index) => {
+                                const transactionTypeText = transaction.transactionType === 'DEPOSIT' ? 'واریز' : 'برداشت';
+                                const row = document.createElement('tr');
+                                row.innerHTML = `
+                                    <th scope="row">${index + 1}</th>
+                                    <td>${transaction.title}</td>
+                                    <td>${transactionTypeText}</td>
+                                    <td>${transaction.amount}</td>
+                                `;
+                                tbody.appendChild(row);
+                            });
+                        })
+                        .catch(error => {
+                            console.error('Error fetching transactions:', error);
+                            alert(`خطا: ${error.message}`);
+                        });
+                }
+            
+                monthForm.addEventListener('submit', (event) => {
+                    event.preventDefault();
+                    const selectedMonth = monthSelect.value;
+                    fetchTransactionsByMonth(selectedMonth);
+                });
+            
+                // Fetch transactions for the default selected month
+                const defaultMonth = monthSelect.value;
+                fetchTransactionsByMonth(defaultMonth);
+            </script>
+            <!-- jQuery  -->
+            <script src="assets/js/jquery.min.js"></script>
+            <script src="assets/js/bootstrap-rtl.min.js"></script>
+            <script src="assets/js/detect.js"></script>
+            <script src="assets/js/fastclick.js"></script>
+            <script src="assets/js/jquery.slimscroll.js"></script>
+            <script src="assets/js/jquery.blockUI.js"></script>
+            <script src="assets/js/waves.js"></script>
+            <script src="assets/js/wow.min.js"></script>
+            <script src="assets/js/jquery.nicescroll.js"></script>
+            <script src="assets/js/jquery.scrollTo.min.js"></script>
 
+            <script src="assets/plugins/jquery-knob/jquery.knob.js"></script>
 
-    <script>
-        var resizefunc = [];
-    </script>
+            <!--Morris Chart-->
+            <script src="assets/plugins/morris/morris.min.js"></script>
+            <script src="assets/plugins/raphael/raphael-min.js"></script>
 
-    <!-- jQuery  -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/bootstrap-rtl.min.js"></script>
-    <script src="assets/js/detect.js"></script>
-    <script src="assets/js/fastclick.js"></script>
-    <script src="assets/js/jquery.slimscroll.js"></script>
-    <script src="assets/js/jquery.blockUI.js"></script>
-    <script src="assets/js/waves.js"></script>
-    <script src="assets/js/wow.min.js"></script>
-    <script src="assets/js/jquery.nicescroll.js"></script>
-    <script src="assets/js/jquery.scrollTo.min.js"></script>
+            <script src="assets/plugins/peity/jquery.peity.min.js"></script>
 
-    <script src="assets/plugins/jquery-knob/jquery.knob.js"></script>
+            <script src="assets/pages/jquery.dashboard_crm.js"></script>
 
-    <!--Morris Chart-->
-    <script src="assets/plugins/morris/morris.min.js"></script>
-    <script src="assets/plugins/raphael/raphael-min.js"></script>
+            <script src="assets/js/jquery.core.js"></script>
+            <script src="assets/js/jquery.app.js"></script>
 
-    <script src="assets/plugins/peity/jquery.peity.min.js"></script>
-
-    <script src="assets/pages/jquery.dashboard_crm.js"></script>
-
-    <script src="assets/js/jquery.core.js"></script>
-    <script src="assets/js/jquery.app.js"></script>
-
-    <script>
-        $(function () {
-            $(".knob").knob();
-        });
-    </script>
+            <script>
+                $(function () {
+                    $(".knob").knob();
+                });
+            </script>
 
 </html>
