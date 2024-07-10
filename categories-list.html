@@ -130,54 +130,81 @@
                     <h3 class="m-t-0 header-title"><b>لیست دسته بندی ها</b></h3>
                     <p class="text-muted font-13">
                     </p>
-
+            
                     <div class="p-20">
-                        <table class="table table-striped m-0">
+                        <table class="table table-striped m-0" id="categories-table">
                             <thead>
                                 <tr>
                                     <th>#</th>
                                     <th>عنوان دسته بندی </th>
                                     <th>عملیات</th>
-
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>خرید منزل</td>
-                                    <td><button class="btn btn-icon waves-effect waves-light btn-danger"> <i
-                                                class="fa fa-remove"></i> </button> <button
-                                            class="btn btn-icon waves-effect waves-light btn-info"> <a href="file:///C:/Users/No1/Desktop/kntu/4022/net/prj/edit-category.html" style="color: aliceblue;"><i
-                                                class="fa fa-edit"></i></a> </button></td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">2</th>
-                                    <td>تفریح</td>
-                                    <td><button class="btn btn-icon waves-effect waves-light btn-danger"> <i
-                                        class="fa fa-remove"></i> </button> <button
-                                    class="btn btn-icon waves-effect waves-light btn-info"> <a href="file:///C:/Users/No1/Desktop/kntu/4022/net/prj/edit-category.html" style="color: aliceblue;"><i
-                                        class="fa fa-edit"></i></a> </button></td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">3</th>
-                                    <td>اقساط</td>
-                                    <td><button class="btn btn-icon waves-effect waves-light btn-danger"> <i
-                                        class="fa fa-remove"></i> </button> <button
-                                    class="btn btn-icon waves-effect waves-light btn-info"> <a href="file:///C:/Users/No1/Desktop/kntu/4022/net/prj/edit-category.html" style="color: aliceblue;"><i
-                                        class="fa fa-edit"></i></a> </button></td>
-                                </tr>
+                                <!-- Categories will be dynamically added here -->
                             </tbody>
                         </table>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-
-
-    <script>
-        var resizefunc = [];
-    </script>
+            
+            <script>
+                async function fetchCategories() {
+                    try {
+                        const response = await fetch('http://localhost:3001/pfm/list-category');
+                        if (response.ok) {
+                            const categories = await response.json();
+                            const categoriesTable = document.getElementById('categories-table');
+                            const tbody = categoriesTable.getElementsByTagName('tbody')[0];
+                            tbody.innerHTML = '';
+            
+                            categories.forEach((category, index) => {
+                                const row = document.createElement('tr');
+                                row.innerHTML = `
+                                    <th scope="row">${index + 1}</th>
+                                    <td>${category.title}</td>
+                                    <td>
+                                        <button class="btn btn-icon waves-effect waves-light btn-danger" onclick="deleteCategory(${category.id})">
+                                            <i class="fa fa-remove"></i>
+                                        </button>
+                                        <button class="btn btn-icon waves-effect waves-light btn-info">
+                                            <a href="/edit-category/${category.id}" style="color: aliceblue;">
+                                                <i class="fa fa-edit"></i>
+                                            </a>
+                                        </button>
+                                    </td>
+                                `;
+                                tbody.appendChild(row);
+                            });
+                        } else {
+                            const error = await response.json();
+                            alert(`Error fetching categories: ${error.error}`);
+                        }
+                    } catch (error) {
+                        alert(`Error: ${error.message}`);
+                    }
+                }
+            
+                async function deleteCategory(categoryId) {
+                    try {
+                        const response = await fetch(`http://localhost:3001/pfm/delete-category/${categoryId}`, {
+                            method: 'DELETE'
+                        });
+            
+                        if (response.ok) {
+                            alert('Category deleted successfully!');
+                            fetchCategories(); // Refresh the categories table
+                        } else {
+                            const error = await response.json();
+                            alert(`Error deleting category: ${error.error}`);
+                        }
+                    } catch (error) {
+                        alert(`Error: ${error.message}`);
+                    }
+                }
+            
+                fetchCategories();
+            </script>
 
     <!-- jQuery  -->
     <script src="assets/js/jquery.min.js"></script>
