@@ -229,7 +229,7 @@
                             headers: {
                                 'Content-Type': 'application/json'
                             },
-                            body: JSON.stringify({ title: transactionTitle, amount: transactionAmount, type: transactionType, categoryId , cartId: cartId})
+                            body: JSON.stringify({ title: transactionTitle, amount: transactionAmount, type: transactionType, category: categoryId , cartId: cartId})
                         });
 
                         if (response.ok) {
