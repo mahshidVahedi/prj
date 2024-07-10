@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A fully featured admin theme which can be used to build CRM, CMS, etc.">
+    <meta name="author" content="Coderthemes">
+
+    <link rel="shortcut icon" href="assets/images/favicon_1.png">
+
+    <title>سامانه مدیریت مالی مهام</title>
+
+
+    <link rel="stylesheet" href="assets/plugins/morris/morris.css">
+
+    <link href="assets/css/bootstrap-rtl.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/core.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/components.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/icons.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/pages.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/responsive.css" rel="stylesheet" type="text/css" />
+
+    <script src="assets/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="fixed-left">
+
+    <!-- Begin page -->
+    <div id="wrapper">
+
+        <!-- Top Bar Start -->
+        <div class="topbar">
+
+            <!-- LOGO -->
+            <div class="topbar-left">
+                <div class="text-center">
+                    <a href="index.html" class="logo"><span></i>مهام</span></a>
+                    <!-- Image Logo here -->
+                    <a href="index.html" class="logo">
+                        <img src="assets/images/logo.png" height="42" />
+                    </a>
+                </div>
+            </div>
+
+            <div class="navbar navbar-default" role="navigation">
+                <div class="container">
+                    <div class="">
+                        <div class="pull-left">
+                            <button class="button-menu-mobile open-left waves-effect waves-light">
+                                <i class="md md-menu"></i>
+                            </button>
+                            <span class="clearfix"></span>
+                        </div>
+
+                        <ul class="nav navbar-nav hidden-xs">
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle waves-effect waves-light" data-toggle="dropdown"
+                                    role="button" aria-haspopup="true" aria-expanded="false">مدیریت گزارش ها<span
+                                        class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="file:///C:/Users/No1/Desktop/kntu/4022/net/prj/monthly-report.html">
+                                            گزارش ماهانه</a></li>
+                                    <li><a href="file:///C:/Users/No1/Desktop/kntu/4022/net/prj/yearly-report.html">
+                                            گزارش سالانه</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle waves-effect waves-light" data-toggle="dropdown"
+                                    role="button" aria-haspopup="true" aria-expanded="false">مدیریت تراکنش ها<span
+                                        class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="file:///C:/Users/No1/Desktop/kntu/4022/net/prj/add-transaction.html">ایجاد
+                                            تراکنش</a></li>
+                                    <li><a href="file:///C:/Users/No1/Desktop/kntu/4022/net/prj/transactions-list.html">مشاهده
+                                            لیست تراکنش ها</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right pull-right">
+                            <li class="hidden-xs">
+                                <a href="#" id="btn-fullscreen" class="waves-effect waves-light"><i
+                                        class="icon-size-fullscreen"></i></a>
+                            </li>
+                            <li class="dropdown top-menu-item-xs">
+                                <a href="" class="dropdown-toggle profile waves-effect waves-light"
+                                    data-toggle="dropdown" aria-expanded="true"><img src="assets/images/user.png"
+                                        alt="user-img" class="img-circle"> </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--/.nav-collapse -->
+                </div>
+            </div>
+        </div>
+        <!-- Top Bar End -->
+        <!-- ========== Left Sidebar Start ========== -->
+
+        <div class="left side-menu">
+            <div class="sidebar-inner slimscrollleft">
+                <!--- Divider -->
+                <div id="sidebar-menu">
+                    <ul>
+                        <li class="has_sub">
+                            <a href="javascript:void(0);" class="waves-effect"><i
+                                    class="glyphicon glyphicon-signal"></i><span>
+                                    نمودارها </span></a>
+                            <ul class="list-unstyled">
+                                <li><a href="file:///C:/Users/No1/Desktop/kntu/4022/net/prj/linear-chart.html">نمودار
+                                        واریز-برداشت</a></li>
+                                <li><a href="file:///C:/Users/No1/Desktop/kntu/4022/net/prj/circle-chart.html">نمودار
+                                        هزینه ها</a></li>
+                            </ul>
+                        </li>
+                        <li class="has_sub">
+                            <a href="javascript:void(0);" class="waves-effect"><i
+                                    class="glyphicon glyphicon-folder-open"></i><span>
+                                    دسته بندی ها </span></a>
+                            <ul class="list-unstyled">
+                                <li><a href="file:///C:/Users/No1/Desktop/kntu/4022/net/prj/categories-list.html">لیست
+                                        دسته بندی ها</a></li>
+                                <li><a href="file:///C:/Users/No1/Desktop/kntu/4022/net/prj/add-category.html"> ایجاد
+                                        دسته بندی جدید</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <div class="clearfix"></div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+        <!-- Left Sidebar End -->
+        <div class="content-page">
+            <!-- Start content -->
+            <div class="content">
+                <div class="container" style="max-width: 800px;">
+                    <div class="portlet"><!-- /primary heading -->
+                        <div class="portlet-heading">
+                            <h3 class="portlet-title text-dark">
+                                نمودار واریز-برداشت ماهانه
+                            </h3>
+
+                            <div class="clearfix"></div>
+                        </div>
+                        <div id="portlet7" class="panel-collapse collapse in">
+                            <div class="portlet-body">
+                                <div id="ordered-bars-chart" style="height: 320px; padding: 0px; position: relative;">
+
+                                    <canvas class="flot-base" width="937" height="320"
+                                        style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 937px; height: 320px;"></canvas>
+                                    <div class="flot-text"
+                                        style="position: absolute; inset: 0px; font-size: smaller; color: rgb(84, 84, 84);">
+                                        <div class="flot-x-axis flot-x1-axis xAxis x1Axis"
+                                            style="position: absolute; inset: 0px; display: block;">
+                                            <div
+                                                style="position: absolute; max-width: 9px; top: 306px; font: 400 11px / 13px IRANSans-web, &quot;Helvetica Neue&quot;, Helvetica, Arial, IRANSans-web; color: rgb(189, 189, 189); left: 44px; text-align: center;">
+                                                0</div>
+                                            <div
+                                                style="position: absolute; max-width: 85px; top: 306px; font: 400 11px / 13px IRANSans-web, &quot;Helvetica Neue&quot;, Helvetica, Arial, IRANSans-web; color: rgb(189, 189, 189); left: 131px; text-align: center;">
+                                                1</div>
+                                            <div
+                                                style="position: absolute; max-width: 36px; top: 306px; font: 400 11px / 13px IRANSans-web, &quot;Helvetica Neue&quot;, Helvetica, Arial, IRANSans-web; color: rgb(189, 189, 189); left: 215px; text-align: center;">
+                                                2</div>
+                                            <div
+                                                style="position: absolute; max-width: 85px; top: 306px; font: 400 11px / 13px IRANSans-web, &quot;Helvetica Neue&quot;, Helvetica, Arial, IRANSans-web; color: rgb(189, 189, 189); left: 300px; text-align: center;">
+                                                3</div>
+                                            <div
+                                                style="position: absolute; max-width: 36px; top: 306px; font: 400 11px / 13px IRANSans-web, &quot;Helvetica Neue&quot;, Helvetica, Arial, IRANSans-web; color: rgb(189, 189, 189); left: 386px; text-align: center;">
+                                                4</div>
+                                            <div
+                                                style="position: absolute; max-width: 85px; top: 306px; font: 400 11px / 13px IRANSans-web, &quot;Helvetica Neue&quot;, Helvetica, Arial, IRANSans-web; color: rgb(189, 189, 189); left: 472px; text-align: center;">
+                                                5</div>
+
+                                        </div>
+                                        <div class="flot-y-axis flot-y1-axis yAxis y1Axis"
+                                            style="position: absolute; inset: 0px; display: block;">
+                                            <div
+                                                style="position: absolute; top: 295px; font: 400 11px / 13px IRANSans-web, &quot;Helvetica Neue&quot;, Helvetica, Arial, IRANSans-web; color: rgb(189, 189, 189); left: 9px; text-align: right;">
+                                                0</div>
+                                            <div
+                                                style="position: absolute; top: 246px; font: 400 11px / 13px IRANSans-web, &quot;Helvetica Neue&quot;, Helvetica, Arial, IRANSans-web; color: rgb(189, 189, 189); left: 7px; text-align: right;">
+                                                5</div>
+                                            <div
+                                                style="position: absolute; top: 197px; font: 400 11px / 13px IRANSans-web, &quot;Helvetica Neue&quot;, Helvetica, Arial, IRANSans-web; color: rgb(189, 189, 189); left: 5px; text-align: right;">
+                                                10</div>
+                                            <div
+                                                style="position: absolute; top: 148px; font: 400 11px / 13px IRANSans-web, &quot;Helvetica Neue&quot;, Helvetica, Arial, IRANSans-web; color: rgb(189, 189, 189); left: 3px; text-align: right;">
+                                                15</div>
+                                            <div
+                                                style="position: absolute; top: 99px; font: 400 11px / 13px IRANSans-web, &quot;Helvetica Neue&quot;, Helvetica, Arial, IRANSans-web; color: rgb(189, 189, 189); left: 3px; text-align: right;">
+                                                20</div>
+                                            <div
+                                                style="position: absolute; top: 50px; font: 400 11px / 13px IRANSans-web, &quot;Helvetica Neue&quot;, Helvetica, Arial, IRANSans-web; color: rgb(189, 189, 189); left: 1px; text-align: right;">
+                                                25</div>
+                                            <div
+                                                style="position: absolute; top: 1px; font: 400 11px / 13px IRANSans-web, &quot;Helvetica Neue&quot;, Helvetica, Arial, IRANSans-web; color: rgb(189, 189, 189); left: 1px; text-align: right;">
+                                                30</div>
+                                        </div>
+                                    </div><canvas class="flot-overlay" width="937" height="320"
+                                        style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 937px; height: 320px;"></canvas>
+                                    <div class="legend">
+                                        <div
+                                            style="position: absolute; width: 209px; height: 20px; top: -17px; right: 5px; background-color: rgb(255, 255, 255); opacity: 0.85;">
+                                        </div>
+                                        <table
+                                            style="position:absolute;top:-17px;right:5px;;font-size:smaller;color:#545454">
+                                            <tbody>
+                                                <tr>
+                                                    <td class="legendColorBox">
+                                                        <div style="border:1px solid null;padding:1px">
+                                                            <div
+                                                                style="width:4px;height:0;border:5px solid rgb(14, 154, 98);overflow:hidden">
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td class="legendLabel"> واریز&nbsp;&nbsp;</td>
+                                                    <td class="legendColorBox">
+                                                        <div style="border:1px solid null;padding:1px">
+                                                            <div
+                                                                style="width:4px;height:0;border:5px solid rgb(192, 41, 41);overflow:hidden">
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td class="legendLabel"> برداشت&nbsp;&nbsp;</td>
+
+
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        var resizefunc = [];
+    </script>
+
+    <!-- jQuery  -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/bootstrap-rtl.min.js"></script>
+    <script src="assets/js/detect.js"></script>
+    <script src="assets/js/fastclick.js"></script>
+    <script src="assets/js/jquery.slimscroll.js"></script>
+    <script src="assets/js/jquery.blockUI.js"></script>
+    <script src="assets/js/waves.js"></script>
+    <script src="assets/js/wow.min.js"></script>
+    <script src="assets/js/jquery.nicescroll.js"></script>
+    <script src="assets/js/jquery.scrollTo.min.js"></script>
+
+    <script src="assets/plugins/jquery-knob/jquery.knob.js"></script>
+
+    <!--Morris Chart-->
+    <script src="assets/plugins/morris/morris.min.js"></script>
+    <script src="assets/plugins/raphael/raphael-min.js"></script>
+
+    <script src="assets/plugins/peity/jquery.peity.min.js"></script>
+
+    <script src="assets/pages/jquery.dashboard_crm.js"></script>
+
+    <script src="assets/js/jquery.core.js"></script>
+    <script src="assets/js/jquery.app.js"></script>
+
+    <script>
+        $(function () {
+            $(".knob").knob();
+        });
+    </script>
+
+</html>
