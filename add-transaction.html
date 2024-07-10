@@ -56,28 +56,7 @@
                         </div>
 
                         <ul class="nav navbar-nav hidden-xs">
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle waves-effect waves-light" data-toggle="dropdown"
-                                    role="button" aria-haspopup="true" aria-expanded="false">مدیریت گزارش ها<span
-                                        class="caret"></span></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="file:///C:/Users/No1/Desktop/kntu/4022/net/prj/monthly-report.html">
-                                            گزارش ماهانه</a></li>
-                                    <li><a href="file:///C:/Users/No1/Desktop/kntu/4022/net/prj/yearly-report.html">
-                                            گزارش سالانه</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle waves-effect waves-light" data-toggle="dropdown"
-                                    role="button" aria-haspopup="true" aria-expanded="false">مدیریت تراکنش ها<span
-                                        class="caret"></span></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="file:///C:/Users/No1/Desktop/kntu/4022/net/prj/add-transaction.html">ایجاد
-                                            تراکنش</a></li>
-                                    <li><a href="file:///C:/Users/No1/Desktop/kntu/4022/net/prj/transactions-list.html">مشاهده
-                                            لیست تراکنش ها</a></li>
-                                </ul>
-                            </li>
+                              
                         </ul>
                         <ul class="nav navbar-nav navbar-right pull-right">
                             <li class="hidden-xs">
@@ -119,6 +98,28 @@
                                         دسته بندی ها</a></li>
                                 <li><a href="file:///C:/Users/No1/Desktop/kntu/4022/net/prj/add-category.html"> ایجاد
                                         دسته بندی جدید</a></li>
+                            </ul>
+                        </li>
+                        <li class="has_sub">
+                            <a href="javascript:void(0);" class="waves-effect"><i
+                                    class="glyphicon  glyphicon-euro"></i><span>
+                                    مدیریت تراکنش ها </span></a>
+                            <ul class="list-unstyled">
+                                <li><a href="file:///C:/Users/No1/Desktop/kntu/4022/net/prj/add-transaction.html">ایجاد
+                                        تراکنش جدید</a></li>
+                                <li><a href="file:///C:/Users/No1/Desktop/kntu/4022/net/prj/transactions-list.html">
+                                        لیست تراکنش ها</a></li>
+                            </ul>
+                        </li>
+                        <li class="has_sub">
+                            <a href="javascript:void(0);" class="waves-effect"><i
+                                    class="glyphicon  glyphicon-list-alt"></i><span>
+                                    مدیریت گزارش ها </span></a>
+                            <ul class="list-unstyled">
+                                <li><a href="file:///C:/Users/No1/Desktop/kntu/4022/net/prj/monthly-report.html"> گزارش
+                                        ماهانه</a></li>
+                                <li><a href="file:///C:/Users/No1/Desktop/kntu/4022/net/prj/yearly-report.html"> گزارش
+                                        سالانه</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -231,6 +232,7 @@
                             },
                             body: JSON.stringify({ title: transactionTitle, amount: transactionAmount, type: transactionType, categoryId , cartId: cartId})
                         });
+                        console.log(response.body)
 
                         if (response.ok) {
                             const data = await response.json();

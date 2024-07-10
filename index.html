@@ -56,31 +56,14 @@
                         </div>
 
                         <ul class="nav navbar-nav hidden-xs">
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle waves-effect waves-light" data-toggle="dropdown"
-                                    role="button" aria-haspopup="true" aria-expanded="false">مدیریت گزارش ها<span
-                                        class="caret"></span></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="file:///C:/Users/No1/Desktop/kntu/4022/net/prj/monthly-report.html"> گزارش ماهانه</a></li>
-                                    <li><a href="file:///C:/Users/No1/Desktop/kntu/4022/net/prj/yearly-report.html">  گزارش سالانه</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle waves-effect waves-light" data-toggle="dropdown"
-                                    role="button" aria-haspopup="true" aria-expanded="false">مدیریت تراکنش ها<span
-                                        class="caret"></span></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="file:///C:/Users/No1/Desktop/kntu/4022/net/prj/add-transaction.html">ایجاد تراکنش</a></li>
-                                    <li><a href="file:///C:/Users/No1/Desktop/kntu/4022/net/prj/transactions-list.html">مشاهده لیست تراکنش ها</a></li>
-                                </ul>
-                            </li>
+                              
                         </ul>
                         <ul class="nav navbar-nav navbar-right pull-right">
                             <li class="hidden-xs">
                                 <a href="#" id="btn-fullscreen" class="waves-effect waves-light"><i
                                         class="icon-size-fullscreen"></i></a>
                             </li>
-                             
+
                         </ul>
                     </div>
                     <!--/.nav-collapse -->
@@ -96,19 +79,47 @@
                 <div id="sidebar-menu">
                     <ul>
                         <li class="has_sub">
-                            <a href="javascript:void(0);" class="waves-effect"><i class="glyphicon glyphicon-signal"></i><span>
+                            <a href="javascript:void(0);" class="waves-effect"><i
+                                    class="glyphicon glyphicon-signal"></i><span>
                                     نمودارها </span></a>
                             <ul class="list-unstyled">
-                                <li><a href="file:///C:/Users/No1/Desktop/kntu/4022/net/prj/linear-chart.html">نمودار واریز-برداشت</a></li>
-                                <li><a href="file:///C:/Users/No1/Desktop/kntu/4022/net/prj/circle-chart.html">نمودار هزینه ها</a></li>
+                                <li><a href="file:///C:/Users/No1/Desktop/kntu/4022/net/prj/linear-chart.html">نمودار
+                                        واریز-برداشت</a></li>
+                                <li><a href="file:///C:/Users/No1/Desktop/kntu/4022/net/prj/circle-chart.html">نمودار
+                                        هزینه ها</a></li>
                             </ul>
                         </li>
                         <li class="has_sub">
-                            <a href="javascript:void(0);" class="waves-effect"><i class="glyphicon glyphicon-folder-open"></i><span>
+                            <a href="javascript:void(0);" class="waves-effect"><i
+                                    class="glyphicon glyphicon-folder-open"></i><span>
                                     دسته بندی ها </span></a>
                             <ul class="list-unstyled">
-                                <li><a href="file:///C:/Users/No1/Desktop/kntu/4022/net/prj/categories-list.html">لیست دسته بندی ها</a></li>
-                                <li><a href="file:///C:/Users/No1/Desktop/kntu/4022/net/prj/add-category.html"> ایجاد دسته بندی جدید</a></li>
+                                <li><a href="file:///C:/Users/No1/Desktop/kntu/4022/net/prj/categories-list.html">لیست
+                                        دسته بندی ها</a></li>
+                                <li><a href="file:///C:/Users/No1/Desktop/kntu/4022/net/prj/add-category.html"> ایجاد
+                                        دسته بندی جدید</a></li>
+                            </ul>
+                        </li>
+                        <li class="has_sub">
+                            <a href="javascript:void(0);" class="waves-effect"><i
+                                    class="glyphicon  glyphicon-euro"></i><span>
+                                    مدیریت تراکنش ها </span></a>
+                            <ul class="list-unstyled">
+                                <li><a href="file:///C:/Users/No1/Desktop/kntu/4022/net/prj/add-transaction.html">ایجاد
+                                        تراکنش جدید</a></li>
+                                <li><a href="file:///C:/Users/No1/Desktop/kntu/4022/net/prj/transactions-list.html">
+                                        لیست تراکنش ها</a></li>
+                            </ul>
+                        </li>
+                        <li class="has_sub">
+                            <a href="javascript:void(0);" class="waves-effect"><i
+                                    class="glyphicon  glyphicon-list-alt"></i><span>
+                                    مدیریت گزارش ها </span></a>
+                            <ul class="list-unstyled">
+                                <li><a href="file:///C:/Users/No1/Desktop/kntu/4022/net/prj/monthly-report.html"> گزارش
+                                        ماهانه</a></li>
+                                <li><a href="file:///C:/Users/No1/Desktop/kntu/4022/net/prj/yearly-report.html"> گزارش
+                                        سالانه</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -147,7 +158,7 @@
                                 </div>
                             </div>
                         </div>
-        
+
                         <div class="col-lg-4">
                             <div class="panel panel-color panel-danger">
                                 <div class="panel-heading">
@@ -158,7 +169,7 @@
                                 </div>
                             </div>
                         </div>
-        
+
                         <div class="col-lg-4">
                             <div class="panel panel-color panel-info">
                                 <div class="panel-heading">
@@ -173,11 +184,11 @@
                 </div>
             </div>
         </div>
-        
+
         <script>
             var resizefunc = [];
             const apiUrl = 'http://localhost:3001/pfm/cart-details';
-        
+
             fetch(apiUrl)
                 .then(response => response.json())
                 .then(data => {
@@ -191,35 +202,35 @@
                 .catch(error => console.error('Error:', error));
         </script>
 
-    <!-- jQuery  -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/bootstrap-rtl.min.js"></script>
-    <script src="assets/js/detect.js"></script>
-    <script src="assets/js/fastclick.js"></script>
-    <script src="assets/js/jquery.slimscroll.js"></script>
-    <script src="assets/js/jquery.blockUI.js"></script>
-    <script src="assets/js/waves.js"></script>
-    <script src="assets/js/wow.min.js"></script>
-    <script src="assets/js/jquery.nicescroll.js"></script>
-    <script src="assets/js/jquery.scrollTo.min.js"></script>
+        <!-- jQuery  -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/bootstrap-rtl.min.js"></script>
+        <script src="assets/js/detect.js"></script>
+        <script src="assets/js/fastclick.js"></script>
+        <script src="assets/js/jquery.slimscroll.js"></script>
+        <script src="assets/js/jquery.blockUI.js"></script>
+        <script src="assets/js/waves.js"></script>
+        <script src="assets/js/wow.min.js"></script>
+        <script src="assets/js/jquery.nicescroll.js"></script>
+        <script src="assets/js/jquery.scrollTo.min.js"></script>
 
-    <script src="assets/plugins/jquery-knob/jquery.knob.js"></script>
+        <script src="assets/plugins/jquery-knob/jquery.knob.js"></script>
 
-    <!--Morris Chart-->
-    <script src="assets/plugins/morris/morris.min.js"></script>
-    <script src="assets/plugins/raphael/raphael-min.js"></script>
+        <!--Morris Chart-->
+        <script src="assets/plugins/morris/morris.min.js"></script>
+        <script src="assets/plugins/raphael/raphael-min.js"></script>
 
-    <script src="assets/plugins/peity/jquery.peity.min.js"></script>
+        <script src="assets/plugins/peity/jquery.peity.min.js"></script>
 
-    <script src="assets/pages/jquery.dashboard_crm.js"></script>
+        <script src="assets/pages/jquery.dashboard_crm.js"></script>
 
-    <script src="assets/js/jquery.core.js"></script>
-    <script src="assets/js/jquery.app.js"></script>
+        <script src="assets/js/jquery.core.js"></script>
+        <script src="assets/js/jquery.app.js"></script>
 
-    <script>
-        $(function () {
-            $(".knob").knob();
-        });
-    </script>
+        <script>
+            $(function () {
+                $(".knob").knob();
+            });
+        </script>
 
 </html>
