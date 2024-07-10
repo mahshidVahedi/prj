@@ -56,20 +56,25 @@
                         </div>
 
                         <ul class="nav navbar-nav hidden-xs">
-                            <li><a href="#" class="waves-effect waves-light">گزارش</a></li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle waves-effect waves-light" data-toggle="dropdown"
+                                    role="button" aria-haspopup="true" aria-expanded="false">مدیریت گزارش ها<span
+                                        class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="file:///C:/Users/No1/Desktop/kntu/4022/net/prj/monthly-report.html"> گزارش ماهانه</a></li>
+                                    <li><a href="file:///C:/Users/No1/Desktop/kntu/4022/net/prj/yearly-report.html">  گزارش سالانه</a></li>
+                                </ul>
+                            </li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle waves-effect waves-light" data-toggle="dropdown"
                                     role="button" aria-haspopup="true" aria-expanded="false">مدیریت تراکنش ها<span
                                         class="caret"></span></a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="#">ایجاد تراکنش</a></li>
-                                    <li><a href="#">مشاهده لیست تراکنش ها</a></li>
+                                    <li><a href="file:///C:/Users/No1/Desktop/kntu/4022/net/prj/add-transaction.html">ایجاد تراکنش</a></li>
+                                    <li><a href="file:///C:/Users/No1/Desktop/kntu/4022/net/prj/transactions-list.html">مشاهده لیست تراکنش ها</a></li>
                                 </ul>
                             </li>
                         </ul>
-
-
-
                         <ul class="nav navbar-nav navbar-right pull-right">
                             <li class="hidden-xs">
                                 <a href="#" id="btn-fullscreen" class="waves-effect waves-light"><i
@@ -94,13 +99,20 @@
                 <!--- Divider -->
                 <div id="sidebar-menu">
                     <ul>
-
                         <li class="has_sub">
-                            <a href="javascript:void(0);" class="waves-effect"><i class="ti-bar-chart"></i><span>
+                            <a href="javascript:void(0);" class="waves-effect"><i class="glyphicon glyphicon-signal"></i><span>
                                     نمودارها </span></a>
                             <ul class="list-unstyled">
-                                <li><a href="#">نمودار واریز-برداشت</a></li>
-                                <li><a href="#">نمودار هزینه ها</a></li>
+                                <li><a href="file:///C:/Users/No1/Desktop/kntu/4022/net/prj/linear-chart.html">نمودار واریز-برداشت</a></li>
+                                <li><a href="file:///C:/Users/No1/Desktop/kntu/4022/net/prj/circle-chart.html">نمودار هزینه ها</a></li>
+                            </ul>
+                        </li>
+                        <li class="has_sub">
+                            <a href="javascript:void(0);" class="waves-effect"><i class="glyphicon glyphicon-folder-open"></i><span>
+                                    دسته بندی ها </span></a>
+                            <ul class="list-unstyled">
+                                <li><a href="file:///C:/Users/No1/Desktop/kntu/4022/net/prj/categories-list.html">لیست دسته بندی ها</a></li>
+                                <li><a href="file:///C:/Users/No1/Desktop/kntu/4022/net/prj/add-category.html"> ایجاد دسته بندی جدید</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -114,16 +126,18 @@
         <div class="content-page">
             <!-- Start content -->
             <div class="content">
-                <div class="container">
+                <div class="container" style="max-width: 800px;">
                     <div class="panel panel-color panel-primary">
                         <div class="panel-heading">
                             <h3 class="panel-title">اطلاعات حساب کاربری</h3>
                         </div>
                         <div class="panel-body">
-
-                        </div>
-                        <div class="panel-footer">
-                            فوتر پنل
+                            <h4>نام کاربری: </h4>
+                            <p id="username"></p>
+                            <h4> میانگین واریزی ماهانه: </h4>
+                            <p id="avg-deposit"></p>
+                            <h4> میانگین برداشت ماهانه: </h4>
+                            <p id="avg-debit"></p>
                         </div>
                     </div>
                     <div class="row">
@@ -133,31 +147,29 @@
                                     <h3 class="panel-title"> مانده حساب</h3>
                                 </div>
                                 <div class="panel-body">
-                                    <p style="float:left;">100,000,000</p>
+                                    <p id="account-balance" style="float:left;"></p>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="row">
+        
                         <div class="col-lg-4">
                             <div class="panel panel-color panel-danger">
                                 <div class="panel-heading">
                                     <h3 class="panel-title">آخرین برداشت از حساب</h3>
                                 </div>
                                 <div class="panel-body">
-                                    <p style="float:left;">100,000</p>
+                                    <p id="last-debit" style="float:left;"></p>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="row">
+        
                         <div class="col-lg-4">
                             <div class="panel panel-color panel-info">
                                 <div class="panel-heading">
                                     <h3 class="panel-title">آخرین واریز به حساب</h3>
                                 </div>
                                 <div class="panel-body">
-                                    <p style="float:left;">800,000</p>
+                                    <p id="last-deposit" style="float:left;"></p>
                                 </div>
                             </div>
                         </div>
@@ -165,12 +177,23 @@
                 </div>
             </div>
         </div>
-    </div>
-
-
-    <script>
-        var resizefunc = [];
-    </script>
+        
+        <script>
+            var resizefunc = [];
+            const apiUrl = 'http://localhost:3001/pfm/cart-details';
+        
+            fetch(apiUrl)
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('username').innerHTML = data.owner;
+                    document.getElementById('avg-deposit').innerHTML = data.avg_deposit;
+                    document.getElementById('avg-debit').innerHTML = data.avg_debit;
+                    document.getElementById('account-balance').innerHTML = data.amount;
+                    document.getElementById('last-debit').innerHTML = data.last_debit;
+                    document.getElementById('last-deposit').innerHTML = data.last_deposit;
+                })
+                .catch(error => console.error('Error:', error));
+        </script>
 
     <!-- jQuery  -->
     <script src="assets/js/jquery.min.js"></script>
