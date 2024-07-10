@@ -61,8 +61,10 @@
                                     role="button" aria-haspopup="true" aria-expanded="false">مدیریت گزارش ها<span
                                         class="caret"></span></a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="file:///C:/Users/No1/Desktop/kntu/4022/net/prj/monthly-report.html"> گزارش ماهانه</a></li>
-                                    <li><a href="file:///C:/Users/No1/Desktop/kntu/4022/net/prj/yearly-report.html">  گزارش سالانه</a></li>
+                                    <li><a href="file:///C:/Users/No1/Desktop/kntu/4022/net/prj/monthly-report.html">
+                                            گزارش ماهانه</a></li>
+                                    <li><a href="file:///C:/Users/No1/Desktop/kntu/4022/net/prj/yearly-report.html">
+                                            گزارش سالانه</a></li>
                                 </ul>
                             </li>
                             <li class="dropdown">
@@ -70,8 +72,10 @@
                                     role="button" aria-haspopup="true" aria-expanded="false">مدیریت تراکنش ها<span
                                         class="caret"></span></a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="file:///C:/Users/No1/Desktop/kntu/4022/net/prj/add-transaction.html">ایجاد تراکنش</a></li>
-                                    <li><a href="file:///C:/Users/No1/Desktop/kntu/4022/net/prj/transactions-list.html">مشاهده لیست تراکنش ها</a></li>
+                                    <li><a href="file:///C:/Users/No1/Desktop/kntu/4022/net/prj/add-transaction.html">ایجاد
+                                            تراکنش</a></li>
+                                    <li><a href="file:///C:/Users/No1/Desktop/kntu/4022/net/prj/transactions-list.html">مشاهده
+                                            لیست تراکنش ها</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -100,19 +104,25 @@
                 <div id="sidebar-menu">
                     <ul>
                         <li class="has_sub">
-                            <a href="javascript:void(0);" class="waves-effect"><i class="glyphicon glyphicon-signal"></i><span>
+                            <a href="javascript:void(0);" class="waves-effect"><i
+                                    class="glyphicon glyphicon-signal"></i><span>
                                     نمودارها </span></a>
                             <ul class="list-unstyled">
-                                <li><a href="file:///C:/Users/No1/Desktop/kntu/4022/net/prj/linear-chart.html">نمودار واریز-برداشت</a></li>
-                                <li><a href="file:///C:/Users/No1/Desktop/kntu/4022/net/prj/circle-chart.html">نمودار هزینه ها</a></li>
+                                <li><a href="file:///C:/Users/No1/Desktop/kntu/4022/net/prj/linear-chart.html">نمودار
+                                        واریز-برداشت</a></li>
+                                <li><a href="file:///C:/Users/No1/Desktop/kntu/4022/net/prj/circle-chart.html">نمودار
+                                        هزینه ها</a></li>
                             </ul>
                         </li>
                         <li class="has_sub">
-                            <a href="javascript:void(0);" class="waves-effect"><i class="glyphicon glyphicon-folder-open"></i><span>
+                            <a href="javascript:void(0);" class="waves-effect"><i
+                                    class="glyphicon glyphicon-folder-open"></i><span>
                                     دسته بندی ها </span></a>
                             <ul class="list-unstyled">
-                                <li><a href="file:///C:/Users/No1/Desktop/kntu/4022/net/prj/categories-list.html">لیست دسته بندی ها</a></li>
-                                <li><a href="file:///C:/Users/No1/Desktop/kntu/4022/net/prj/add-category.html"> ایجاد دسته بندی جدید</a></li>
+                                <li><a href="file:///C:/Users/No1/Desktop/kntu/4022/net/prj/categories-list.html">لیست
+                                        دسته بندی ها</a></li>
+                                <li><a href="file:///C:/Users/No1/Desktop/kntu/4022/net/prj/add-category.html"> ایجاد
+                                        دسته بندی جدید</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -124,95 +134,154 @@
         </div>
         <!-- Left Sidebar End -->
         <div class="content-page">
-            <!-- Start content -->
-            <div class="content">
-                <h2>
-                    ایجاد تراکنش جدید
-                </h2>
-                <div class=" card-box" style="max-width:600px; margin:auto;">
-                    <form class="form-horizontal m-t-20">
-
-                        <div class="form-group ">
-                            <div class="col-xs-12">
-                                <input class="form-control" type="text" required="" placeholder=" عنوان تراکنش">
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-xs-12">
-                                <input class="form-control" type="number" required="" placeholder="مبلغ">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="col-xs-12">
-                                <label class="col-sm-2 control-label"> نوع تراکنش </label>
-                                <div class="col-sm-10">
-                                    <select class="form-control">
-                                        <option>واریز</option>
-                                        <option>برداشت</option>
-                                    </select>
+            <div class="content-page">
+                <!-- Start content -->
+                <div class="content">
+                    <h2>
+                        ایجاد تراکنش جدید
+                    </h2>
+                    <div class=" card-box" style="max-width:600px; margin:auto;">
+                        <form class="form-horizontal m-t-20" id="create-transaction-form">
+                            <div class="form-group ">
+                                <div class="col-xs-12">
+                                    <input class="form-control" type="text" id="transaction-title" required=""
+                                        placeholder=" عنوان تراکنش">
                                 </div>
                             </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="col-xs-12">
-                                <label class="col-sm-2 control-label"> دسته بندی</label>
-                                <div class="col-sm-10">
-                                    <select class="form-control">
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
-                                    </select>
+                            <div class="form-group">
+                                <div class="col-xs-12">
+                                    <input class="form-control" type="number" id="transaction-amount" required=""
+                                        placeholder="مبلغ">
                                 </div>
                             </div>
-                        </div>
-                        <div class="form-group text-center m-t-40">
-                            <div class="col-xs-12">
-                                <button class="btn btn-pink btn-block text-uppercase waves-effect waves-light sm"
-                                    type="submit">ایجاد تراکنش</button>
+                            <div class="form-group">
+                                <div class="col-xs-12">
+                                    <label class="col-sm-2 control-label"> نوع تراکنش </label>
+                                    <div class="col-sm-10">
+                                        <select class="form-control" id="transaction-type">
+                                            <option value="deposit">واریز</option>
+                                            <option value="withdrawal">برداشت</option>
+                                        </select>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </form>
+                            <div class="form-group">
+                                <div class="col-xs-12">
+                                    <label class="col-sm-2 control-label"> دسته بندی</label>
+                                    <div class="col-sm-10">
+                                        <select class="form-control" id="category-id">
+                                            <option value="">یک دسته بندی را انتخاب کنید</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group text-center m-t-40">
+                                <div class="col-xs-12">
+                                    <button class="btn btn-pink btn-block text-uppercase waves-effect waves-light sm"
+                                        type="submit">
+                                        ایجاد تراکنش
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
-        </div>
 
+            <script>
+                const createTransactionForm = document.getElementById('create-transaction-form');
+                const transactionTitleInput = document.getElementById('transaction-title');
+                const transactionAmountInput = document.getElementById('transaction-amount');
+                const transactionTypeSelect = document.getElementById('transaction-type');
+                const categorySelect = document.getElementById('category-id');
 
-        <script>
-            var resizefunc = [];
-        </script>
+                // Fetch categories and populate the select options
+                async function fetchCategories() {
+                    try {
+                        const response = await fetch('http://localhost:3001/pfm/list-category');
+                        if (response.ok) {
+                            const categories = await response.json();
+                            categories.forEach(category => {
+                                const option = document.createElement('option');
+                                option.value = category.id;
+                                option.textContent = category.title;
+                                categorySelect.appendChild(option);
+                            });
+                        } else {
+                            const error = await response.json();
+                            alert(`Error fetching categories: ${error.error}`);
+                        }
+                    } catch (error) {
+                        alert(`Error: ${error.message}`);
+                    }
+                }
 
-        <!-- jQuery  -->
-        <script src="assets/js/jquery.min.js"></script>
-        <script src="assets/js/bootstrap-rtl.min.js"></script>
-        <script src="assets/js/detect.js"></script>
-        <script src="assets/js/fastclick.js"></script>
-        <script src="assets/js/jquery.slimscroll.js"></script>
-        <script src="assets/js/jquery.blockUI.js"></script>
-        <script src="assets/js/waves.js"></script>
-        <script src="assets/js/wow.min.js"></script>
-        <script src="assets/js/jquery.nicescroll.js"></script>
-        <script src="assets/js/jquery.scrollTo.min.js"></script>
+                fetchCategories();
 
-        <script src="assets/plugins/jquery-knob/jquery.knob.js"></script>
+                createTransactionForm.addEventListener('submit', async (event) => {
+                    event.preventDefault();
+                    const transactionTitle = transactionTitleInput.value.trim();
+                    const transactionAmount = parseFloat(transactionAmountInput.value);
+                    const transactionType = transactionTypeSelect.value;
+                    const categoryId = categorySelect.value;
+                    const cartId = 1;
 
-        <!--Morris Chart-->
-        <script src="assets/plugins/morris/morris.min.js"></script>
-        <script src="assets/plugins/raphael/raphael-min.js"></script>
+                    try {
+                        const response = await fetch('http://localhost:3001/pfm/create-transaction', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify({ title: transactionTitle, amount: transactionAmount, type: transactionType, categoryId , cartId: cartId})
+                        });
 
-        <script src="assets/plugins/peity/jquery.peity.min.js"></script>
+                        if (response.ok) {
+                            const data = await response.json();
+                            console.log('Transaction created:', data);
+                            alert('تراکنش با موفقیت اضافه شد!');
+                            // Reset the form
+                            createTransactionForm.reset();
+                        } else {
+                            const error = await response.json();
+                            console.error('Error creating transaction:', error);
+                            alert(`Error: ${error.error}`);
+                        }
+                    } catch (error) {
+                        console.error('Error:', error);
+                        alert(`Error: ${error.message}`);
+                    }
+                });
+            </script>
 
-        <script src="assets/pages/jquery.dashboard_crm.js"></script>
+            <!-- jQuery  -->
+            <script src="assets/js/jquery.min.js"></script>
+            <script src="assets/js/bootstrap-rtl.min.js"></script>
+            <script src="assets/js/detect.js"></script>
+            <script src="assets/js/fastclick.js"></script>
+            <script src="assets/js/jquery.slimscroll.js"></script>
+            <script src="assets/js/jquery.blockUI.js"></script>
+            <script src="assets/js/waves.js"></script>
+            <script src="assets/js/wow.min.js"></script>
+            <script src="assets/js/jquery.nicescroll.js"></script>
+            <script src="assets/js/jquery.scrollTo.min.js"></script>
 
-        <script src="assets/js/jquery.core.js"></script>
-        <script src="assets/js/jquery.app.js"></script>
+            <script src="assets/plugins/jquery-knob/jquery.knob.js"></script>
 
-        <script>
-            $(function () {
-                $(".knob").knob();
-            });
-        </script>
+            <!--Morris Chart-->
+            <script src="assets/plugins/morris/morris.min.js"></script>
+            <script src="assets/plugins/raphael/raphael-min.js"></script>
+
+            <script src="assets/plugins/peity/jquery.peity.min.js"></script>
+
+            <script src="assets/pages/jquery.dashboard_crm.js"></script>
+
+            <script src="assets/js/jquery.core.js"></script>
+            <script src="assets/js/jquery.app.js"></script>
+
+            <script>
+                $(function () {
+                    $(".knob").knob();
+                });
+            </script>
 
 </html>
