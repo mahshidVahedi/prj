@@ -130,30 +130,57 @@
                     ایجاد دسته بندی جدید
                 </h2>
                 <div class=" card-box" style="max-width:600px; margin:auto;">
-                    <form class="form-horizontal m-t-20">
-
+                    <form class="form-horizontal m-t-20" id="create-category-form">
                         <div class="form-group ">
                             <div class="col-xs-12">
-                                <input class="form-control" type="text" required="" placeholder=" عنوان دسته بندی">
+                                <input class="form-control" type="text" id="category-title" required="" placeholder=" عنوان دسته بندی">
                             </div>
                         </div>
-
-                        
                         <div class="form-group text-center m-t-40">
                             <div class="col-xs-12">
-                                <button class="btn btn-pink btn-block text-uppercase waves-effect waves-light sm"
-                                    type="submit">ایجاد دسته بندی</button>
+                                <button class="btn btn-pink btn-block text-uppercase waves-effect waves-light sm" type="submit">
+                                    ایجاد دسته بندی
+                                </button>
                             </div>
                         </div>
                     </form>
                 </div>
             </div>
-        </div>
-
-
-        <script>
-            var resizefunc = [];
-        </script>
+            
+            <script>
+                const createCategoryForm = document.getElementById('create-category-form');
+                const categoryTitleInput = document.getElementById('category-title');
+            
+                createCategoryForm.addEventListener('submit', async (event) => {
+                    event.preventDefault();
+                    const categoryTitle = categoryTitleInput.value.trim();
+            
+                    try {
+                        const response = await fetch('http://localhost:3001/pfm/create-category', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify({ title: categoryTitle })
+                        });
+            
+                        if (response.ok) {
+                            const data = await response.json();
+                            console.log('Category created:', data);
+                            alert('دسته بندی مورد نظر با موفقیت ساخته شد');
+                            // Reset the form
+                            createCategoryForm.reset();
+                        } else {
+                            const error = await response.json();
+                            console.error('Error creating category:', error);
+                            alert(`Error: ${error.error}`);
+                        }
+                    } catch (error) {
+                        console.error('Error:', error);
+                        alert(`Error: ${error.message}`);
+                    }
+                });
+            </script>
 
         <!-- jQuery  -->
         <script src="assets/js/jquery.min.js"></script>
