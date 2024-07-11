@@ -143,35 +143,82 @@
         <div class="content-page">
             <!-- Start content -->
             <div class="content">
-                <h2>
-                    ویرایش دسته بندی
-                </h2>
-                <div class=" card-box" style="max-width:600px; margin:auto;"
-                    style=" box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
-                    <form class="form-horizontal m-t-20">
-
-                        <div class="form-group ">
+                <h2>ویرایش دسته بندی</h2>
+                <div class="card-box" style="max-width:600px; margin:auto; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                    <form class="form-horizontal m-t-20" onsubmit="updateCategory(event)">
+                        <div class="form-group">
                             <div class="col-xs-12">
                                 <input class="form-control" type="text" required="" placeholder=" عنوان دسته بندی">
                             </div>
                         </div>
-
-
                         <div class="form-group text-center m-t-40">
                             <div class="col-xs-12">
-                                <button class="btn btn-pink btn-block text-uppercase waves-effect waves-light sm"
-                                    type="submit"> ذخیره دسته بندی </button>
+                                <button class="btn btn-pink btn-block text-uppercase waves-effect waves-light sm" type="submit">ذخیره دسته بندی</button>
                             </div>
                         </div>
                     </form>
                 </div>
             </div>
-        </div>
-
-
-        <script>
-            var resizefunc = [];
-        </script>
+        
+            <script>
+                async function fetchCategoryData() {
+                    const urlParams = new URLSearchParams(window.location.search);
+                    const categoryId = urlParams.get('id');
+        
+                    try {
+                        const response = await fetch(`http://localhost:3001/pfm/manage-category/${categoryId}`);
+                        if (response.ok) {
+                            const data = await response.json();
+                            return data;
+                        } else {
+                            const error = await response.json();
+                            throw new Error(`Error fetching category data: ${error.error}`);
+                        }
+                    } catch (error) {
+                        alert(error.message);
+                    }
+                }
+        
+                async function updateCategory(event) {
+                    event.preventDefault();
+        
+                    const urlParams = new URLSearchParams(window.location.search);
+                    const categoryId = urlParams.get('id');
+                    const titleInput = document.querySelector('input[type="text"]');
+                    const title = titleInput.value.trim();
+        
+                    try {
+                        const response = await fetch(`http://localhost:3001/pfm/edit-category/${categoryId}`, {
+                            method: 'PUT',
+                            headers: {
+                                'Content-Type': 'application/json',
+                            },
+                            body: JSON.stringify({ title }),
+                        });
+        
+                        if (response.ok) {
+                            const data = await response.json();
+                            alert(`Category updated successfully. ID: ${data.id}, Title: ${data.title}`);
+                            // Redirect or perform other actions as needed
+                        } else {
+                            const error = await response.json();
+                            throw new Error(`Error updating category: ${error.error}`);
+                        }
+                    } catch (error) {
+                        alert(error.message);
+                    }
+                }
+        
+                async function loadCategoryData() {
+                    const data = await fetchCategoryData();
+                    if (data) {
+                        const titleInput = document.querySelector('input[type="text"]');
+                        titleInput.value = data.title;
+                    }
+                }
+        
+                loadCategoryData();
+            </script>
 
         <!-- jQuery  -->
         <script src="assets/js/jquery.min.js"></script>
